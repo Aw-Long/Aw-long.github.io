@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>love</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .inputText {
+            border-radius: 8px;
+            border: #FF6666 solid 1px;
+            margin-left: 20px;
+            width: 200px;
+            height: 30px;
+            color: #FF6666;
+        }
+        
+        .inputButt {
+            border-radius: 8px;
+            border: #FFF solid 1px;
+            margin-left: 20px;
+            width: 100px;
+            height: 35px;
+            background-color: #FF6666;
+            color: #FFF;
+        }
+        
+        .divP {
+            margin-left: 25px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="img\plane.gif">
+    </div>
+    <div>
+        <input type="password" placeholder="请输入前往的坐标" class="inputText" id="numb" maxlength="3">
+        <input type="button" value="点击出发！！！" class="inputButt" onclick="myFunction()">
+        <div class="divP">
+            <p id="demo"></p>
+        </div>
+        <div>
+            <input type="button" value="获取提示" class="inputButt" onclick="getElementById('demo2').innerHTML=time.toLocaleString()">
+            <p id="demo2" style="color:#FF9933;margin-left: 10px;"></p>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    function myFunction() {
+        var x, text;
+        x = document.getElementById("numb").value;
+        if (isNaN(x) || x != 520) {
+            text = "坐标不对哦!(..•˘_˘•..)";
+        } else {
+            window.location.href = "index2.html";
+        }
+        document.getElementById("demo").innerHTML = text;
+    }
+    var time = new Date();
+    console.log(time.toLocaleTimeString());
+    console.log(time.toLocaleString());
+</script>
+</html>
